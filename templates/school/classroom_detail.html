@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ object.name }}{% endblock %}
+{% block content %}
+<h1>{{ object.name }}</h1>
+<p>Capacità: {{ object.capacity }} posti</p>
+<h2>Corsi</h2>
+<ul>
+    {% for course in object.courses.all %}
+    <li><a href="{% url 'course_detail' course.id %}">{{ course }}</a></li>
+    {% empty %}
+    <li>Nessun corso in questa classe</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'classroom_update' object.id %}">Modifica</a>
+<a href="{% url 'classroom_list' %}">Torna alle classi</a>
+{% endblock %}

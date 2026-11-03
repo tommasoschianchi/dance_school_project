@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: lightgray;
+  color: #222222;
+}
+
+nav,
+main,
+footer {
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 90%;
+  border-bottom: 0.2rem solid #222222;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  vertical-align: center;
+}
+
+nav > a {
+  line-height: 3rem;
+}
+
+nav > a > img {
+  height: 3rem;
+}
+
+table {
+  background-color: wheat;
+  border: 1px solid darkgray;
+  border-collapse: collapse;
+}
+
+table td,
+table th {
+  border: 1px solid darkgray;
+  margin: 0;
+  padding: 0.6rem;
+}

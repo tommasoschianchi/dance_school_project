@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+        <title>{% block title %}Default{% endblock %}</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <link jref=""{%static 'css/style.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <nav>
+            <a href="{% url 'home' %}" title="Vai a Homepage">
+                <img src="{% static 'img/logo.png' %}" alt="Logo della Scuola">
+            </a>
+            <a href="{% url 'about' %}" title="Vai a Chi siamo">Chi siamo</a>
+            <a href="{% url 'lista_scuole' %}" title="Vai a Lista delle Scuole">Scuole</a>
+            <a href="{% url 'dayoftheweek_list' %}" title="Vai a Lista dei Giorni della Settimana">Giorni</a>
+            <a href="{% url 'classroom_list' %}" title="Vai a Lista delle Classi">Classi</a>
+            <a href="{% url 'course_list' %}" title="Vai a Lista dei Corsi">Corsi</a>
+            <a href="{% url 'admin:index' %}" title="Vai al Pannello Admin">Admin</a>
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <address>Via dello Sport 42, Modena, 41124</address>
+            <p>Phone: 059 424242</p>
+            <p>
+                Email: <a href="mailto:email@dance-school.it">email@dance-school.it</a>
+            </p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Giorni{% endblock %}
+{% block content %}
+<table>
+    <tr><th>numero</th><th>giorno</th><th></th></tr>
+    
+    {% for el in object_list %}
+    <tr>
+        <td>{{ el.number }}</td>
+        <td>{{ el.name }}</td>
+        <td><a href="{% url 'dayoftheweek_detail' el.id %}">Dettagli</a></td>
+        <td><a href="{% url 'dayoftheweek_update' el.id %}">Modifica</a></td>
+        <td><a href="{% url 'dayoftheweek_delete' el.id %}">Elimina</a></td>
+    </tr>
+    
+    
+    {% empty %}
+    <tr><td colspan="3">Nessun giorno inserito</td></tr>
+    {% endfor %}
+    <a href="{% url 'dayoftheweek_create' %}">Crea nuovo giorno</a>
+</table>
+{% endblock %}

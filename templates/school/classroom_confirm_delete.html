@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Elimina classe{% endblock %}
+{% block content %}
+<h1>Eliminare "{{ object.name }}"?</h1>
+<p>Verranno eliminati anche tutti i corsi di questa classe.</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Elimina</button>
+    <a href="{% url 'classroom_list' %}">Annulla</a>
+</form>
+{% endblock %}

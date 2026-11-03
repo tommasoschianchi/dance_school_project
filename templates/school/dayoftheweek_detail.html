@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}{{ object.name }}{% endblock %}
+{% block content %}
+<h1>{{ object.name }}</h1>
+<p>Numero: {{ object.number }}</p>
+<a href="{% url 'dayoftheweek_list' %}">Torna ai giorni</a>
+{% endblock %}

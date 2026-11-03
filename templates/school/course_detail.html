@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ object.subject }}{% endblock %}
+{% block content %}
+<h1>{{ object.subject }}</h1>
+<p>Giorno: <a href="{% url 'dayoftheweek_detail' object.day_of_the_week.id %}">{{ object.day_of_the_week }}</a></p>
+<p>Ora di inizio: {{ object.starting_hour }}</p>
+<p>Classe: <a href="{% url 'classroom_detail' object.classroom.id %}">{{ object.classroom }}</a></p>
+<p>Scuola: {{ object.school }}</p>
+<a href="{% url 'course_update' object.id %}">Modifica</a>
+<a href="{% url 'course_list' %}">Torna ai corsi</a>
+{% endblock %}

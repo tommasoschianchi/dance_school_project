@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Corsi{% endblock %}
+{% block content %}
+<table>
+    <tr><th>materia</th><th>ora inizio</th><th>giorno</th><th>classe</th><th>scuola</th><th></th><th></th><th></th></tr>
+    {% for el in object_list %}
+    <tr>
+        <td>{{ el.subject }}</td>
+        <td>{{ el.starting_hour }}</td>
+        <td>{{ el.day_of_the_week }}</td>
+        <td>{{ el.classroom.name }}</td>
+        <td>{{ el.school }}</td>
+        <td><a href="{% url 'course_detail' el.id %}">Dettagli</a></td>
+        <td><a href="{% url 'course_update' el.id %}">Modifica</a></td>
+        <td><a href="{% url 'course_delete' el.id %}">Elimina</a></td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="8">Nessun corso inserito</td></tr>
+    {% endfor %}
+</table>
+<a href="{% url 'course_create' %}">Crea nuovo corso</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Elimina giorno{% endblock %}
+{% block content %}
+<h1>Eliminare "{{ object.name }}"?</h1>
+<p>Verranno eliminati anche tutti i corsi di questo giorno.</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Elimina</button>
+    <a href="{% url 'dayoftheweek_list' %}">Annulla</a>
+</form>
+{% endblock %}

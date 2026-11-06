@@ -24,3 +24,5 @@ def dettaglio_scuola(request, pk):
         "schoolmanagement/school_detail.html",
         {"object": scuola},
     )
+
+

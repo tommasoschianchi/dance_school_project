@@ -1,6 +1,6 @@
 from django.urls import path
 from school.views import (
-    DayOfTheWeekCreateView, DayOfTheWeekListView, DayOfTheWeekDetailView, DayOfTheWeekUpdateView, DayOfTheWeekDeleteView,
+    DayOfTheWeekCreateView, DayOfTheWeekListView, DayOfTheWeekDetailView, DayOfTheWeekUpdateView, DayOfTheWeekDeleteView, api_example,
     classroomListView, classroomDetailView, classroomCreateView, classroomUpdateView, classroomDeleteView,
     courseListView, courseDetailView, courseCreateView, courseUpdateView, courseDeleteView,
 )
@@ -20,5 +20,6 @@ urlpatterns = [path("giorni/", DayOfTheWeekListView.as_view(), name="dayofthewee
                path("course/<int:pk>/elimina/", courseDeleteView.as_view(), name="course_delete"),
                path("giorni/nuovo/", DayOfTheWeekCreateView.as_view(), name="dayoftheweek_create"),
                path("giorni/<int:pk>/modifica/", DayOfTheWeekUpdateView.as_view(), name="dayoftheweek_update"),
-               path("giorni/<int:pk>/elimina/", DayOfTheWeekDeleteView.as_view(), name="dayoftheweek_delete")
+               path("giorni/<int:pk>/elimina/", DayOfTheWeekDeleteView.as_view(), name="dayoftheweek_delete"),
+               path("api/example/", api_example, name="api_example")
                ]

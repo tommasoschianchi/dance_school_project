@@ -3,6 +3,8 @@ from django.views import generic
 from school.models import DayOfTheWeek
 from school.models import Classroom
 from school.models import Course
+from django.http import  JsonResponse
+
 __all__ = ['DayOfTheWeekListView']
 
 class DayOfTheWeekListView(generic.ListView):
@@ -70,3 +72,8 @@ class courseUpdateView(generic.UpdateView):
 class courseDeleteView(generic.DeleteView):
     model = Course
     success_url = reverse_lazy('course_list')
+
+
+def api_example(request):
+    data = {"prova": "hello world!"}
+    return JsonResponse(data)

@@ -3,7 +3,10 @@ from django.views import generic
 from school.models import DayOfTheWeek
 from school.models import Classroom
 from school.models import Course
+from school.models import School
 from django.http import  JsonResponse
+from school.serializers import SchoolSerializer
+from rest_framework import generics
 
 __all__ = ['DayOfTheWeekListView']
 
@@ -77,3 +80,11 @@ class courseDeleteView(generic.DeleteView):
 def api_example(request):
     data = {"prova": "hello world!"}
     return JsonResponse(data)
+
+class ApiSchoolDetail(generics.RetrieveAPIView):
+    queryset = School.objects.all()
+    serializer_class = SchoolSerializer
+
+class ApiSchoolList(generics.ListAPIView):
+    queryset = School.objects.all()
+    serializer_class = SchoolSerializer

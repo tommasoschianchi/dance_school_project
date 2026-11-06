@@ -42,8 +42,14 @@ INSTALLED_APPS = [
     "school.apps.SchoolConfig",
     # Third-party apps
     "crispy_forms",
-    "crispy_bootstrap5"
+    "crispy_bootstrap5",
+    "rest_framework"
 ]
+REST_FRAMEWORK = {
+'DEFAULT_PERMISSION_CLASSES': [
+'rest_framework.permissions.AllowAny',
+]
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
